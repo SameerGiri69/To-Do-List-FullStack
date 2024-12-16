@@ -26,7 +26,6 @@ namespace test.Controllers
             _userTasksRepository = userTasksRepository;
             _userManager = userManager;
         }
-        [Authorize]
         [HttpPost]
         [Route("create-task")]
         public async Task<IActionResult> Create(CreateUserTasksDto tasksDto)
@@ -36,7 +35,6 @@ namespace test.Controllers
             var result = await _userTasksRepository.CreateTask(tasksDto,currUser);
             return Ok(result);
         }
-        [Authorize]
         [HttpGet]
         [Route("get-tasks")]
         public async Task<IActionResult> GerUserTasks()
@@ -47,11 +45,10 @@ namespace test.Controllers
 
             if (userTasks == null) return Ok("You have no tasks for today");
 
-            return Ok(userTasks);
+            return Ok(userTasks.ToArray());
         }
-        [Authorize]
-        [HttpGet]
-        [Route("set-iscompleted")]
+        [HttpPost]
+        [Route("set-iscompleted/{taskId}")]
         public async Task<IActionResult> SetIsCompleted(string taskId)
         {
             _userTasksRepository.SetIsCompleted(taskId);

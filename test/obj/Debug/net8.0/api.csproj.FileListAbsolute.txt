@@ -173,3 +173,4 @@ C:\Users\hogrider\source\repos\test\test\obj\Debug\net8.0\api.genruntimeconfig.c
 C:\Users\hogrider\source\repos\test\test\obj\Debug\net8.0\ref\api.dll
 C:\Users\hogrider\source\repos\test\test\bin\Debug\net8.0\package-lock.json
 C:\Users\hogrider\source\repos\test\test\bin\Debug\net8.0\package.json
+C:\Users\hogrider\source\repos\test\test\obj\Debug\net8.0\api.sourcelink.json

@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using test.Data;
 using test.Interface;
 using test.Model;
@@ -28,21 +30,28 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
 });
 
-
 builder.Services.ConfigureApplicationCookie(config =>
 {
     config.Cookie.Name = "Cookie";
-    config.LoginPath = "/api/login";
+    config.LoginPath = "/api/account/login";
 });
 
-builder.Services.AddAuthorization(config =>
-{
-    var defaultAuthBuilder = new AuthorizationPolicyBuilder();
-    var defaultAuthPolicy = defaultAuthBuilder
-    .RequireAuthenticatedUser()
-    .Build();
+//builder.Services.AddAuthorization(config =>
+//{
+//    var defaultAuthBuilder = new AuthorizationPolicyBuilder();
+//    var defaultAuthPolicy = defaultAuthBuilder
+//    .RequireAuthenticatedUser()
+//    .Build();
 
-    config.DefaultPolicy = defaultAuthPolicy;
+//    config.DefaultPolicy = defaultAuthPolicy;
+//});
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder => builder.WithOrigins("http://localhost:5173")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials());
 });
 
 var app = builder.Build();
@@ -56,7 +65,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+
+
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

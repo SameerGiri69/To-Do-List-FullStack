@@ -72,7 +72,12 @@ namespace test.Controllers
             if(user != null)
             {
                 var signInResult = await _signInManager.PasswordSignInAsync(user, loginDto.Password, false, false);
-                if (signInResult.Succeeded) return Ok();
+
+                if (signInResult.Succeeded)
+                {
+                    var response = new { UserName = user.UserName, Email = user.Email };
+                    return Ok(response);
+                }
                 return BadRequest();
             }
             return BadRequest("user doesnot exists");

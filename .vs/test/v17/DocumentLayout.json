@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\hogrider\\source\\repos\\test\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\controllers\\usertaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\controllers\\usertaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\repository\\usertasksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\repository\\usertasksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|c:\\users\\hogrider\\source\\repos\\test\\test\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7EF89C14-67DF-4D4C-A27F-FCF7767B1749}|test\\api.csproj|solutionrelative:test\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,16 +46,79 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserTasksRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Repository\\UserTasksRepository.cs",
+              "RelativeDocumentMoniker": "test\\Repository\\UserTasksRepository.cs",
+              "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Repository\\UserTasksRepository.cs",
+              "RelativeToolTip": "test\\Repository\\UserTasksRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAMwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T13:32:23.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "test\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "test\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T07:56:21.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Program.cs",
+              "RelativeDocumentMoniker": "test\\Program.cs",
+              "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Program.cs",
+              "RelativeToolTip": "test\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T06:27:50.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "test\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "test\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAkwEUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T06:25:48.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserTasksController.cs",
+              "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\UserTasksController.cs",
+              "RelativeDocumentMoniker": "test\\Controllers\\UserTasksController.cs",
+              "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\Controllers\\UserTasksController.cs",
+              "RelativeToolTip": "test\\Controllers\\UserTasksController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T06:25:48.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "api.csproj",
               "DocumentMoniker": "C:\\Users\\hogrider\\source\\repos\\test\\test\\api.csproj",
               "RelativeDocumentMoniker": "test\\api.csproj",
               "ToolTip": "C:\\Users\\hogrider\\source\\repos\\test\\test\\api.csproj",
               "RelativeToolTip": "test\\api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-15T07:06:32.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T07:06:32.119Z"
             }
           ]
         }

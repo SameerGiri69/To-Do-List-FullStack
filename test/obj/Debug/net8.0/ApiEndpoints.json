@@ -107,15 +107,15 @@
   {
     "ContainingType": "test.Controllers.UserTasksController",
     "Method": "SetIsCompleted",
-    "RelativePath": "api/task/set-iscompleted",
-    "HttpMethod": "GET",
+    "RelativePath": "api/task/set-iscompleted/{taskId}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "taskId",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

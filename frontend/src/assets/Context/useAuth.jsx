@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router";
+import { redirect, useNavigate } from "react-router";
 import { loginAPI, logOutAPI } from "../authService";
 import { toast } from "react-toastify";
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 // Create the User Context
-export const UserContext = createContext();
+export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
       setUser(JSON.parse(user));
       setToken(token);
       // attached token to the header of  every api call we make
-      axios.defaults.headers.common["Cookie"] = ".AspNetCore.Cookies=" + token;
+      axios.defaults.headers.common["Cookie"] = "Cookie" + token;
       console.log(document.cookie);
     }
     setIsReady(true);
@@ -41,6 +41,7 @@ export const UserProvider = ({ children }) => {
           setToken(res?.data.token);
           setUser(userObj);
           toast.success("Login Success!");
+          redirect("tasks");
         }
       })
       .catch((e) => toast.warning("Server error occured"));
@@ -53,8 +54,11 @@ export const UserProvider = ({ children }) => {
     setUser(null);
     setToken("");
   };
+  const isLoggedIn = () => {
+    return !!user;
+  };
   return (
-    <UserContext.Provider value={loginUser}>
+    <UserContext.Provider value={{ loginUser, user, isLoggedIn, logout }}>
       {isReady ? children : null}
     </UserContext.Provider>
   );
