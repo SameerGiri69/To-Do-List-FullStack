@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router";
 
 const api = "http://localhost:5203/api/task/";
-const xx = "http://localhost:5203/api/task/set-iscompleted/2002";
 export const getUserTasks = async () => {
   const res = await axios.get(api + "get-tasks", { withCredentials: true });
   return res.data;
@@ -19,8 +19,17 @@ export const createUserTask = async (task) => {
   );
 };
 export const setIsCompletedApi = async (taskId) => {
-  debugger;
   const res = await axios.post(api + `set-iscompleted/${taskId}`, {
     withCredentials: true,
   });
+};
+export const deleteUserTask = async (taskId) => {
+  debugger;
+  const res = await axios.delete(api + `delete-task/${taskId}`, {
+    withCredentials: true,
+  });
+  if (res.status === 400) {
+    return Error(res.status);
+  }
+  return res.data;
 };

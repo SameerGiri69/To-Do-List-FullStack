@@ -54,7 +54,6 @@ namespace test.Controllers
             _userTasksRepository.SetIsCompleted(taskId);
             return Ok();
         }
-        [Authorize]
         [HttpPut]
         [Route("edit-task")]
         public async Task<IActionResult> EditTask([FromBody] EditTaskDto editDto,string taskId)
@@ -62,9 +61,8 @@ namespace test.Controllers
             var res = _userTasksRepository.EditTask(editDto, taskId);
             return Ok(res);
         }
-        [Authorize]
         [HttpDelete]
-        [Route("delete-task")]
+        [Route("delete-task/{taskId}")]
         public async Task<IActionResult> DeleteTask(string taskId)
         {
             var res = _userTasksRepository.DeleteTask(taskId);

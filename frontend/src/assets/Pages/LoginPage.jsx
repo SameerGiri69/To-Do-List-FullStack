@@ -4,6 +4,7 @@ import "./LoginPage.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../Context/useAuth";
 import { useForm } from "react-hook-form";
+import { redirect } from "react-router";
 
 const validation = Yup.object().shape({
   email: Yup.string().required("Email is required"),
@@ -20,6 +21,7 @@ const LoginPage = () => {
 
   const handleLogin = async (form) => {
     loginUser(form.email, form.password);
+    
   };
 
   return (

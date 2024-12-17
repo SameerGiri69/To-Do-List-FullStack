@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { redirect, useNavigate } from "react-router";
-import { loginAPI, logOutAPI } from "../authService";
+import { loginAPI, logOutAPI, registerApi } from "../authService";
 import { toast } from "react-toastify";
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }) => {
           setToken(res?.data.token);
           setUser(userObj);
           toast.success("Login Success!");
-          redirect("tasks");
+          navigate("tasks");
         }
       })
       .catch((e) => toast.warning("Server error occured"));
@@ -54,11 +54,21 @@ export const UserProvider = ({ children }) => {
     setUser(null);
     setToken("");
   };
+  const registerUser = async (UserName, Email, Password) => {
+    const res = await registerApi(UserName, Email, Password);
+    if (res.data === String) {
+      navigate("login");
+    } else {
+      throw new console.error(res.data);
+    }
+  };
   const isLoggedIn = () => {
     return !!user;
   };
   return (
-    <UserContext.Provider value={{ loginUser, user, isLoggedIn, logout }}>
+    <UserContext.Provider
+      value={{ loginUser, user, isLoggedIn, logout, registerUser }}
+    >
       {isReady ? children : null}
     </UserContext.Provider>
   );

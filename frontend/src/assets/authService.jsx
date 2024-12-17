@@ -19,6 +19,19 @@ export const loginAPI = async (email, password) => {
     console.log(error);
   }
 };
+export const registerApi = async (UserName, Email, Password) => {
+  try {
+    const data = await axios.post(api + "account/register", {
+      Email: Email,
+      UserName: UserName,
+      Password: Password,
+    });
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const logOutAPI = async () => {
   const res = axios.post(api + `account/logout`, {}, { withCredentials: true });
   return res;

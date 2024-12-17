@@ -60,7 +60,7 @@
   {
     "ContainingType": "test.Controllers.UserTasksController",
     "Method": "DeleteTask",
-    "RelativePath": "api/task/delete-task",
+    "RelativePath": "api/task/delete-task/{taskId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -68,7 +68,7 @@
       {
         "Name": "taskId",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getUserTasks, setIsCompletedApi } from "../../tasksApi";
+import {
+  deleteUserTask,
+  getUserTasks,
+  setIsCompletedApi,
+} from "../../tasksApi";
 import "./TaskList.css";
 import { useToast } from "react-toastify";
+import { useLocation } from "react-router";
 const dummyTasks = [
   {
     id: 1,
@@ -38,6 +43,7 @@ const dummyTasks = [
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [isCompleted, setIsCompleted] = useState(false);
+  const location = useLocation();
   useEffect(() => {
     const fetchTasks = async () => {
       const response = await getUserTasks();
@@ -48,11 +54,15 @@ const TaskList = () => {
       }
     };
     fetchTasks();
-  }, [isCompleted]);
+  }, [isCompleted, location.state?.refresh]);
   const handleIsCompleted = async (taskId) => {
-    debugger;
     await setIsCompletedApi(taskId);
     setIsCompleted((prev) => !prev);
+  };
+  const handleDelete = async (taskId) => {
+    const res = await deleteUserTask(taskId);
+    setIsCompleted((prev) => !prev);
+    console.log(res);
   };
   // setTasks((prevtasks) => ({...prevtasks, userTasks}))
   return (
@@ -68,6 +78,12 @@ const TaskList = () => {
             }`}
           >
             Status: {task.isCompleted ? "Completed" : "Pending"}
+          </button>
+          <button
+            className="delete-button"
+            onClick={() => handleDelete(task.id)}
+          >
+            Delete Task
           </button>
         </div>
       ))}

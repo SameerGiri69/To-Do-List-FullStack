@@ -2,11 +2,14 @@ import React from "react";
 import { useState } from "react";
 import "./CreateTaskPage.css";
 import { createUserTask } from "../../tasksApi";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 const CreateTaskPage = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,11 +17,14 @@ const CreateTaskPage = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     debugger;
+    e.preventDefault();
     console.log("Submitted Data:", formData);
     createUserTask(formData);
+    debugger;
     setFormData({ title: "", description: "" });
+    toast.success("Task added successfully");
+    navigate("../tasks", { state: { refresh: true } });
   };
   return (
     <div className="form-container">
