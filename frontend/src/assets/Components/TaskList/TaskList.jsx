@@ -43,10 +43,13 @@ const dummyTasks = [
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [isCompleted, setIsCompleted] = useState(false);
+
   const location = useLocation();
+
   useEffect(() => {
     const fetchTasks = async () => {
       const response = await getUserTasks();
+
       if (Array.isArray(response)) {
         setTasks(response);
       } else {
@@ -54,7 +57,7 @@ const TaskList = () => {
       }
     };
     fetchTasks();
-  }, [isCompleted, location.state?.refresh]);
+  }, [isCompleted, location.state.refresh]);
   const handleIsCompleted = async (taskId) => {
     await setIsCompletedApi(taskId);
     setIsCompleted((prev) => !prev);

@@ -17,20 +17,17 @@ const CreateTaskPage = () => {
   };
 
   const handleSubmit = (e) => {
-    debugger;
     e.preventDefault();
     console.log("Submitted Data:", formData);
     createUserTask(formData);
-    debugger;
     setFormData({ title: "", description: "" });
     toast.success("Task added successfully");
-    navigate("../tasks", { state: { refresh: true } });
+    navigate("../tasks", { state: { refresh: Date.now() } });
   };
   return (
     <div className="form-container">
       <h2>Add a New Task</h2>
-      <form onSubmit={handleSubmit}>
-        {/* Title Input */}
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Title:</label>
           <input
@@ -43,8 +40,6 @@ const CreateTaskPage = () => {
             required
           />
         </div>
-
-        {/* Description Input */}
         <div className="form-group">
           <label htmlFor="description">Description:</label>
           <textarea
@@ -57,9 +52,7 @@ const CreateTaskPage = () => {
             required
           />
         </div>
-
-        {/* Submit Button */}
-        <button type="submit" className="submit-button">
+        <button className="form-submit-btn" type="submit">
           Add Task
         </button>
       </form>

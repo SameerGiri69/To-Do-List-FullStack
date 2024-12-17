@@ -1,93 +1,95 @@
-/* Form container */
 .form-container {
-    width: 90%;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 25px 30px;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /* Form Header */
-  .form-container h2 {
-    text-align: center;
-    font-size: 1.8em;
-    color: #333333;
-    margin-bottom: 20px;
-    font-weight: 600;
-  }
-  
-  /* Form group: label and input */
-  .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group label {
-    margin-bottom: 8px;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #555555;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 2px solid #dddddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Focus effect for input fields */
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
-    background-color: #ffffff;
-  }
-  
-  /* Submit button */
-  .submit-button {
-    display: inline-block;
-    width: 100%;
-    padding: 12px 0;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Hover and Active Effects */
-  .submit-button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-  }
-  
-  .submit-button:active {
-    background-color: #004094;
-    box-shadow: none;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .form-container {
-      padding: 20px;
-    }
-  
-    .form-container h2 {
-      font-size: 1.5em;
-    }
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  font-size: 13px; /* Slightly smaller font */
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  box-sizing: border-box;
+  border-radius: 12px; /* Slightly smaller border radius */
+  margin: 0; /* No margin auto */
+  overflow: hidden; /* Hide overflow to avoid scrollbars */
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced vertical space between groups */
+  flex: 1; /* Allow form to take remaining space */
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Tighten up label to input spacing */
+}
+
+.form-container .form-group label {
+  margin-bottom: 2px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 11px; /* Smaller label font */
+}
+
+.form-container .form-group input {
+  padding: 8px 10px; /* Less padding inside input */
+  border-radius: 6px;
+  color: #fff;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+  font-size: 12px; /* Smaller font */
+}
+
+.form-container .form-group textarea {
+  padding: 8px 10px; /* Less padding */
+  border-radius: 6px;
+  resize: none;
+  color: #fff;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 12px; /* Smaller font */
+  height: 60px; /* Significantly reduced height */
+}
+
+.form-container .form-group input::placeholder,
+.form-container .form-group textarea::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus,
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+  font-family: inherit;
+  color: #717171;
+  font-weight: 600;
+  width: 100px; /* Smaller fixed width for the button */
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 8px 10px; /* Less padding */
+  font-size: 12px; /* Smaller font */
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}

@@ -7,14 +7,13 @@ import CreateTaskPage from "../Pages/CreateTaskPage/CreateTaskPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import HomePage from "../Pages/HomePage/HomePage";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {path:"/", element:<HomePage/>},
-      { path: "login", element: <LoginPage /> },
+      { path: "home", element: <HomePage /> },
+      { path: "/", element: <LoginPage /> },
       { path: "register", element: <RegisterPage /> },
       {
         path: "tasks",

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
 import "./LoginPage.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../Context/useAuth";
 import { useForm } from "react-hook-form";
-import { redirect } from "react-router";
+import { redirect, useNavigate } from "react-router";
 
 const validation = Yup.object().shape({
   email: Yup.string().required("Email is required"),
@@ -12,7 +12,17 @@ const validation = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  const { loginUser } = useAuth();
+  const { loginUser, isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const res = isLoggedIn();
+    if (res === true) {
+      navigate("home");
+    }
+    return;
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -21,7 +31,6 @@ const LoginPage = () => {
 
   const handleLogin = async (form) => {
     loginUser(form.email, form.password);
-    
   };
 
   return (

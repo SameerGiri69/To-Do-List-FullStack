@@ -22,7 +22,6 @@ export const UserProvider = ({ children }) => {
       setUser(JSON.parse(user));
       setToken(token);
       // attached token to the header of  every api call we make
-      axios.defaults.headers.common["Cookie"] = "Cookie" + token;
       console.log(document.cookie);
     }
     setIsReady(true);
@@ -41,7 +40,7 @@ export const UserProvider = ({ children }) => {
           setToken(res?.data.token);
           setUser(userObj);
           toast.success("Login Success!");
-          navigate("tasks");
+          navigate("home");
         }
       })
       .catch((e) => toast.warning("Server error occured"));
@@ -53,6 +52,8 @@ export const UserProvider = ({ children }) => {
     console.log(res.data);
     setUser(null);
     setToken("");
+    navigate("");
+    toast.warning("Logout Success");
   };
   const registerUser = async (UserName, Email, Password) => {
     const res = await registerApi(UserName, Email, Password);

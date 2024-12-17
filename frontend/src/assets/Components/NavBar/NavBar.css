@@ -1,12 +1,15 @@
 /* Navbar container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 1rem 2rem;
-    color: white;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent black */
+  padding: 1rem 2rem;
+  color: white;
+  backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow for depth */
+}
+
   
   /* Navbar logo */
   .navbar-logo h1 {
@@ -59,11 +62,70 @@
   }
   
   .navbar-button.logout {
-    background-color: #f44336;
+    background-color: #613c39;
     color: white;
   }
   
   .navbar-button.logout:hover {
     background-color: #e53935;
   }
-  
+/* Navbar button common styles */
+.navbar-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #333; /* Dark grey background */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.navbar-button:hover {
+  background-color: #555; /* Lighter grey on hover */
+}
+
+/* Add Task button */
+.navbar-button.add {
+  margin-right: 30px; /* Adjusted spacing */
+  margin-left: 0;
+}
+
+
+/* My Tasks button */
+.navbar-button.tasks {
+  margin-left: auto; /* Push to the right */
+  margin-right: 0; 
+}
+/* Add Task button */
+.navbar-button.add:hover {
+  background-color: #90ee90; /* Light green on hover */
+  color: #fff;
+}
+
+/* My Tasks button */
+.navbar-button.tasks:hover {
+  background-color: #90ee90; /* Light green on hover */
+  color: #fff;
+}
+
+/* Container for date and time */
+.navbar-datetime {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;
+  font-size: 1.2rem;
+}
+
+/* If you prefer a single line, you can change flex-direction to row and add spacing */
+.navbar-datetime {
+  flex-direction: row;
+  gap: 10px;
+}
+
+.navbar-date,
+.navbar-time {
+  color: #ddd;
+}

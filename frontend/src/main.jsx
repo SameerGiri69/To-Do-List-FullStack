@@ -5,12 +5,10 @@ import { RouterProvider } from "react-router";
 import { router } from "./assets/Routes/Routes";
 import { UserContext, UserProvider } from "./assets/Context/useAuth";
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider
-      router={router}
-      future={{
-        v7_startTransition: true,
-      }}
-    />
-  </StrictMode>
+  <RouterProvider
+    router={router}
+    future={{
+      v7_startTransition: true,
+    }}
+  />
 );

@@ -24,12 +24,15 @@ export const setIsCompletedApi = async (taskId) => {
   });
 };
 export const deleteUserTask = async (taskId) => {
-  debugger;
   const res = await axios.delete(api + `delete-task/${taskId}`, {
     withCredentials: true,
   });
   if (res.status === 400) {
     return Error(res.status);
   }
+  return res.data;
+};
+export const getQuoteApi = async () => {
+  const res = await axios.get("https://quotes-github-readme.vercel.app/api");
   return res.data;
 };
