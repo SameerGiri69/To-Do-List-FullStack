@@ -1,3 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Reset margins and padding to prevent scroll issues */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Ensure elements are sized correctly */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent images from overflowing their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* General rule to handle unwanted overflow */
+body {
+  overflow-x: hidden;
+}

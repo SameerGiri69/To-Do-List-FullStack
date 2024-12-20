@@ -67,9 +67,9 @@ const NavBar = () => {
                 Add Task
               </Link>
             </li>
-            <button className="navbar-button logout" onClick={logout}>
+            <Link className="navbar-button logout" onClick={logout} to="">
               Logout
-            </button>
+            </Link>
           </>
         ) : (
           <>

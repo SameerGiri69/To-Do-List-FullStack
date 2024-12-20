@@ -57,7 +57,7 @@ const TaskList = () => {
       }
     };
     fetchTasks();
-  }, [isCompleted, location.state.refresh]);
+  }, [isCompleted, location.state?.refresh]);
   const handleIsCompleted = async (taskId) => {
     await setIsCompletedApi(taskId);
     setIsCompleted((prev) => !prev);
@@ -69,28 +69,34 @@ const TaskList = () => {
   };
   // setTasks((prevtasks) => ({...prevtasks, userTasks}))
   return (
-    <div className="task-container">
-      {tasks.map((task) => (
-        <div key={task.id} className="task-card">
-          <h1 className="task-title">{task.title}</h1>
-          <p className="task-description">{task.description}</p>
-          <button
-            onClick={() => handleIsCompleted(task.id)}
-            className={`task-status ${
-              task.isCompleted ? "completed" : "pending"
-            }`}
-          >
-            Status: {task.isCompleted ? "Completed" : "Pending"}
-          </button>
-          <button
-            className="delete-button"
-            onClick={() => handleDelete(task.id)}
-          >
-            Delete Task
-          </button>
+    <>
+      {tasks.length > 0 ? (
+        <div className="task-container">
+          {tasks.map((task) => (
+            <div key={task.id} className="task-card">
+              <h1 className="task-title">{task.title}</h1>
+              <p className="task-description">{task.description}</p>
+              <button
+                onClick={() => handleIsCompleted(task.id)}
+                className={`task-status ${
+                  task.isCompleted ? "completed" : "pending"
+                }`}
+              >
+                Status: {task.isCompleted ? "Completed" : "Pending"}
+              </button>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(task.id)}
+              >
+                Delete Task
+              </button>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      ) : (
+        <h1 className="no-tasks-heading">No Tasks for today 😴</h1>
+      )}
+    </>
   );
 };
 

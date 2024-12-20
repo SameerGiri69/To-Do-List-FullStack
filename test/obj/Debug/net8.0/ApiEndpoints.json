@@ -42,6 +42,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "api.Controllers.DummyController",
+    "Method": "Index",
+    "RelativePath": "api/dummy/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "test.Controllers.UserTasksController",
     "Method": "Create",
     "RelativePath": "api/task/create-task",

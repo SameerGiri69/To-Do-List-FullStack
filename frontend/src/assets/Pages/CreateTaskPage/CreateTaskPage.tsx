@@ -22,7 +22,7 @@ const CreateTaskPage = () => {
     createUserTask(formData);
     setFormData({ title: "", description: "" });
     toast.success("Task added successfully");
-    navigate("../tasks", { state: { refresh: Date.now() } });
+    navigate("../tasks", { state: { refresh: true } });
   };
   return (
     <div className="form-container">

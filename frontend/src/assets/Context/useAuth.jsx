@@ -52,7 +52,7 @@ export const UserProvider = ({ children }) => {
     console.log(res.data);
     setUser(null);
     setToken("");
-    navigate("");
+
     toast.warning("Logout Success");
   };
   const registerUser = async (UserName, Email, Password) => {

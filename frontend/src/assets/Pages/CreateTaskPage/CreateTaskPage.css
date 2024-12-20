@@ -7,16 +7,17 @@
   background: linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
-  font-size: 13px; /* Slightly smaller font */
+  font-size: 14px; /* Slightly larger font */
   font-family: inherit;
   color: white;
   display: flex;
   flex-direction: column;
   background-size: cover;
   box-sizing: border-box;
-  border-radius: 12px; /* Slightly smaller border radius */
-  margin: 0; /* No margin auto */
-  overflow: hidden; /* Hide overflow to avoid scrollbars */
+  border-radius: 12px;
+  overflow: hidden;
+  position: absolute;
+  left: 40%;
 }
 
 .form-container button:active {
@@ -26,48 +27,49 @@
 .form-container .form {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Reduced vertical space between groups */
-  flex: 1; /* Allow form to take remaining space */
+  gap: 14px; /* Increased vertical space between groups */
+  flex: 1;
 }
 
 .form-container .form-group {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* Tighten up label to input spacing */
+  gap: 6px; /* Slightly increased label to input spacing */
 }
 
 .form-container .form-group label {
   margin-bottom: 2px;
   color: #717171;
   font-weight: 600;
-  font-size: 11px; /* Smaller label font */
+  font-size: 13px; /* Larger label font */
 }
 
 .form-container .form-group input {
-  padding: 8px 10px; /* Less padding inside input */
+  padding: 10px 12px; /* Increased padding inside input */
   border-radius: 6px;
   color: #fff;
   font-family: inherit;
   background-color: transparent;
   border: 1px solid #414141;
-  font-size: 12px; /* Smaller font */
+  font-size: 14px; /* Larger font */
 }
 
 .form-container .form-group textarea {
-  padding: 8px 10px; /* Less padding */
+  padding: 10px 12px; /* Increased padding */
   border-radius: 6px;
   resize: none;
   color: #fff;
   border: 1px solid #414141;
   background-color: transparent;
   font-family: inherit;
-  font-size: 12px; /* Smaller font */
-  height: 60px; /* Significantly reduced height */
+  font-size: 14px; /* Larger font */
+  height: 80px; /* Slightly increased height */
+  width: 300px;
 }
 
 .form-container .form-group input::placeholder,
 .form-container .form-group textarea::placeholder {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .form-container .form-group input:focus,
@@ -80,11 +82,11 @@
   font-family: inherit;
   color: #717171;
   font-weight: 600;
-  width: 100px; /* Smaller fixed width for the button */
+  width: 110px; /* Slightly larger fixed width for the button */
   background: #313131;
   border: 1px solid #414141;
-  padding: 8px 10px; /* Less padding */
-  font-size: 12px; /* Smaller font */
+  padding: 10px 12px; /* Increased padding */
+  font-size: 14px; /* Larger font */
   cursor: pointer;
   border-radius: 6px;
 }
